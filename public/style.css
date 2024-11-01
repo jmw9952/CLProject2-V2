@@ -1,0 +1,40 @@
+/* Reset body margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Higher than other elements */
+    pointer-events: none; /* Ensures that clicks pass through to underlying elements */
+}
+
+/* Style for the image container */
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Apply blur only to the images and add hover effect */
+.images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: blur(8px); /* Initial blur */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect to unblur and slightly enlarge the image */
+.images img:hover {
+    filter: blur(0); /* Remove blur on hover */
+    transform: scale(1.05); /* Slight zoom */
+}
