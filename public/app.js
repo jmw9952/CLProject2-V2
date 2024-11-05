@@ -10,7 +10,13 @@ let imgPos = [];
 let img1 = document.getElementById('img-1');
 let img2 = document.getElementById('img-2');
 let img3 = document.getElementById('img-3');
-
+let img4 = document.getElementById('img-4');
+let img5 = document.getElementById('img-5');
+let img6 = document.getElementById('img-6');
+let img7 = document.getElementById('img-7');
+let img8 = document.getElementById('img-8');
+let img9 = document.getElementById('img-9');
+let img10 = document.getElementById('img-10');
 
 function preload(){
     defaultImage = loadImage("media/male-nipple.png");
@@ -45,6 +51,7 @@ function draw(){
     }
 }
 
+// socket emits for unblurring 
 img1.addEventListener('click', () => {
     // console.log(img1);
     // img1.style.filter = 'blur(0)';
@@ -63,6 +70,41 @@ img3.addEventListener('click', () => {
     // img3.style.filter = 'blur(0)';
     let imageClicked3 = {imageId:'img-3'};
     socket.emit('unblur', imageClicked3);
+})
+
+img4.addEventListener('click', () => {
+    let imageClicked4 = {imageId:'img-4'};
+    socket.emit('unblur', imageClicked4);
+})
+
+img5.addEventListener('click', () => {
+    let imageClicked5 = {imageId:'img-5'};
+    socket.emit('unblur', imageClicked5);
+})
+
+img6.addEventListener('click', () => {
+    let imageClicked6 = {imageId:'img-6'};
+    socket.emit('unblur', imageClicked6);
+})
+
+img7.addEventListener('click', () => {
+    let imageClicked7 = {imageId:'img-7'};
+    socket.emit('unblur', imageClicked7);
+})
+
+img8.addEventListener('click', () => {
+    let imageClicked8 = {imageId:'img-8'};
+    socket.emit('unblur', imageClicked8);
+})
+
+img9.addEventListener('click', () => {
+    let imageClicked9 = {imageId:'img-9'};
+    socket.emit('unblur', imageClicked9);
+})
+
+img10.addEventListener('click', () => {
+    let imageClicked10 = {imageId:'img-10'};
+    socket.emit('unblur', imageClicked10);
 })
 
 // Get mouse position and send to server
