@@ -35,6 +35,13 @@ io.sockets.on('connection', function(socket) {
         // socket.emit('msg', data);
     });
 
+    socket.on('unblur', function(data){
+        console.log(data);
+
+        io.sockets.emit('unblur', data);
+
+    })
+
     //Listen for this client to disconnect
     socket.on('disconnect', function() {
         console.log("A client has disconnected: " + socket.id);

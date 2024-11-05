@@ -29,8 +29,13 @@ function setup() {
         imgPos.push(mousePos);
         
         // Check if both target clicks have been met to unblur images
-        checkAndUnblur(mousePos);
+        // checkAndUnblur(mousePos);
     });
+
+    socket.on('unblur', function(imageClicked){
+        let curImage = document.getElementById(imageClicked.imageId);
+        curImage.style.filter = 'blur(0)';
+    })
 }
 
 function draw(){
@@ -42,16 +47,22 @@ function draw(){
 
 img1.addEventListener('click', () => {
     // console.log(img1);
-    img1.style.filter = 'blur(0)';
+    // img1.style.filter = 'blur(0)';
+    let imageClicked1 = {imageId:'img-1'};
+    socket.emit('unblur', imageClicked1);
 
 })
 
 img2.addEventListener('click', () => {
-    img2.style.filter = 'blur(0)';
+    // img2.style.filter = 'blur(0)';
+    let imageClicked2 = {imageId:'img-2'};
+    socket.emit('unblur', imageClicked2);
 })
 
 img3.addEventListener('click', () => {
-    img3.style.filter = 'blur(0)';
+    // img3.style.filter = 'blur(0)';
+    let imageClicked3 = {imageId:'img-3'};
+    socket.emit('unblur', imageClicked3);
 })
 
 // Get mouse position and send to server
