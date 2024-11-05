@@ -7,6 +7,10 @@ socket.on('connect', function () {
 // Preload images
 let defaultImage;
 let imgPos = [];
+let img1 = document.getElementById('img-1');
+let img2 = document.getElementById('img-2');
+let img3 = document.getElementById('img-3');
+
 
 function preload(){
     defaultImage = loadImage("media/male-nipple.png");
@@ -35,6 +39,20 @@ function draw(){
         drawNipple(imgPos[i]);
     }
 }
+
+img1.addEventListener('click', () => {
+    // console.log(img1);
+    img1.style.filter = 'blur(0)';
+
+})
+
+img2.addEventListener('click', () => {
+    img2.style.filter = 'blur(0)';
+})
+
+img3.addEventListener('click', () => {
+    img3.style.filter = 'blur(0)';
+})
 
 // Get mouse position and send to server
 function mouseClicked() {

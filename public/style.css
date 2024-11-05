@@ -35,6 +35,8 @@ canvas {
 
 /* Hover effect to unblur and slightly enlarge the image */
 .images img:hover {
-    filter: blur(0); /* Remove blur on hover */
-    transform: scale(1.05); /* Slight zoom */
+    filter: blur(0); 
+    /* Remove blur on hover */
+    transform: scale(1.05); 
+    /* Slight zoom */
 }
